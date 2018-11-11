@@ -1,0 +1,43 @@
+{
+  "name": "Answer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "correct": {
+      "type": "boolean",
+      "required": true
+    },
+    "point": {
+      "type": "number"
+    },
+    "order": {
+      "type": "number"
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "question": {
+      "type": "belongsTo",
+      "model": "Question",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

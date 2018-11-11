@@ -1,0 +1,10 @@
+{
+  "db": {
+    "host": "localhost",
+    "database": "equiz",
+    "username": "root",
+    "password": "",
+    "name": "db",
+    "connector": "mysql"
+  }
+}

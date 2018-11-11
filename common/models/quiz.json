@@ -1,0 +1,52 @@
+{
+  "name": "Quiz",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string"
+    },
+    "short_desc": {
+      "type": "string",
+      "required": true
+    },
+    "full_desc": {
+      "type": "string"
+    },
+    "visible": {
+      "type": "boolean",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

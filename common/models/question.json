@@ -1,0 +1,47 @@
+{
+  "name": "Question",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string"
+    },
+    "time": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answers": {
+      "type": "hasMany",
+      "model": "Answer",
+      "foreignKey": ""
+    },
+    "quiz": {
+      "type": "belongsTo",
+      "model": "Quiz",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
